@@ -24,11 +24,12 @@ public class DialogueManager : MonoBehaviour
     }
 
     IEnumerator TypeSentence(string sentence)
-    {
+    {       
+
         dialogueText.text = "";
 
         keyboard.Play();
-        
+
         foreach (char letter in sentence.ToCharArray())
         {
             dialogueText.text += letter;
@@ -52,11 +53,27 @@ public class DialogueManager : MonoBehaviour
             sentences.Enqueue(sentence);
         }
 
+        StartCoroutine(ChangeSentence());
+    }
+
+    IEnumerator ChangeSentence()
+    {
         DisplayNextSentence();
+        yield return new WaitForSeconds(2f);
+
+        DisplayNextSentence();
+        yield return new WaitForSeconds(2f);
+
+        DisplayNextSentence();
+        yield return new WaitForSeconds(2f);
+
+        DisplayNextSentence();
+        yield return new WaitForSeconds(2f);
     }
 
     public void DisplayNextSentence()
-    {
+    {       
+
         if (sentences.Count == 0)
         {
             EndDialogue();
@@ -64,7 +81,7 @@ public class DialogueManager : MonoBehaviour
         }
 
         string sentence = sentences.Dequeue();
-        StopAllCoroutines();
+        //StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence));
     }
 
