@@ -15,9 +15,9 @@ public class VideoController : MonoBehaviour
 
     IEnumerator ChangeScene()
     {
-        yield return new WaitForSeconds(10f);
+        yield return new WaitForSeconds(8f);
 
-        SceneManager.LoadScene("Content");
+        SceneFader.instance.LoadScene("Content");
 
     }
 
