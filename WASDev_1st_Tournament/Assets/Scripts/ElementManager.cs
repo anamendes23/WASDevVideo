@@ -117,7 +117,7 @@ public class ElementManager : MonoBehaviour
         groupPicTournament.SetActive(true);
         groupPicTournamentAnim.Play("Group");
         cybersecurityClub.SetActive(false);
-        yield return new WaitForSeconds(33f);
+        yield return new WaitForSeconds(10f);
         //deactivate everything
         SNConsole.SetActive(false);
         gameCubeConsole.SetActive(false);
@@ -129,5 +129,10 @@ public class ElementManager : MonoBehaviour
         faderOut.SetActive(true);
         fadeOutAnim.Play("FadeOut");
         fader.SetActive(false);
+        yield return new WaitForSeconds(2f);
+        win1.SetActive(true);
+        win2.SetActive(true);
+        win3.SetActive(true);
+        win4.SetActive(true);
     }
 }

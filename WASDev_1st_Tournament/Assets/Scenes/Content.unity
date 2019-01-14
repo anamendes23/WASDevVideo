@@ -208,7 +208,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &212890027
 RectTransform:
   m_ObjectHideFlags: 0
@@ -984,7 +984,8 @@ MonoBehaviour:
   marioVP321: {fileID: 1374509649}
   vr: {fileID: 1224712694}
   winnersBg: {fileID: 230560358}
-  text: {fileID: 212890026}
+  VR: {fileID: 1224712692}
+  BG: {fileID: 1045320546}
 --- !u!4 &506215237
 Transform:
   m_ObjectHideFlags: 0
@@ -2519,7 +2520,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1224712693
 RectTransform:
   m_ObjectHideFlags: 0
