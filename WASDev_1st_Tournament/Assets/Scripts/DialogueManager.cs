@@ -22,6 +22,13 @@ public class DialogueManager : MonoBehaviour
     //Videos
     [SerializeField]
     private VideoPlayer marioVP321;
+    [SerializeField]
+    private VideoPlayer vr;
+    [SerializeField]
+    private VideoPlayer winnersBg;
+
+    [SerializeField]
+    private GameObject text;
 
     private Queue<string> sentences;
 
@@ -87,6 +94,15 @@ public class DialogueManager : MonoBehaviour
 
         yield return new WaitForSeconds(12f);
         marioVP321.Play();
+
+        yield return new WaitForSeconds(50f);
+        text.SetActive(true);
+        vr.Play();        
+
+        yield return new WaitForSeconds(30f);
+        text.SetActive(false);
+        winnersBg.Play();
+        
     }
 
     public void DisplayNextSentence()
