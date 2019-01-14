@@ -41,11 +41,9 @@ public class SceneFader : MonoBehaviour
     {
         fadePanel.SetActive(true);
         fadeAnim.Play("FadeIn");
-        //yield return StartCoroutine(MyCoroutine.WaitForRealSeconds(1f));
         yield return new WaitForSeconds(1f);
         SceneManager.LoadScene(scene);
         fadeAnim.Play("FadeOut");
-        //yield return StartCoroutine(MyCoroutine.WaitForRealSeconds(1f));
         yield return new WaitForSeconds(1f);
         fadePanel.SetActive(false);
     }
