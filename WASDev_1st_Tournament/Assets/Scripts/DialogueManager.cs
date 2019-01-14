@@ -29,6 +29,8 @@ public class DialogueManager : MonoBehaviour
     [SerializeField]
     private GameObject VR;
     [SerializeField]
+    private GameObject Winners;
+    [SerializeField]
     private GameObject BG;
 
     private Queue<string> sentences;
@@ -59,7 +61,7 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(Dialogue dialogue)
     {
-        bgMusic.volume = 0.1f;
+        //bgMusic.volume = 0.1f;
         anim.SetBool("IsOpen", true);
         nameText.text = dialogue.name;
 
@@ -88,23 +90,35 @@ public class DialogueManager : MonoBehaviour
         yield return new WaitForSeconds(5f);
 
         anim.SetBool("IsOpen", false);
-        bgMusic.volume = 1.0f;
+        //bgMusic.volume = 1.0f;
         //DisplayNextSentence();
         yield return new WaitForSeconds(3f);
         bgMusicMario.Play();
 
-        yield return new WaitForSeconds(12f);
+        yield return new WaitForSeconds(9.5f);        
         marioVP321.Play();
+        yield return new WaitForSeconds(1f);
+        BG.SetActive(false);
 
         yield return new WaitForSeconds(35f);
+        BG.SetActive(true);
         VR.SetActive(true);
-        vr.Play();        
+        vr.aspectRatio = VideoAspectRatio.FitOutside;
+        vr.Play();
+        yield return new WaitForSeconds(1f);
+        BG.SetActive(false);
 
-        yield return new WaitForSeconds(20f);
+        yield return new WaitForSeconds(10f);
         VR.SetActive(false);
+        BG.SetActive(true);
+
+        yield return new WaitForSeconds(2f);
+        Winners.SetActive(true);
         BG.SetActive(false);
         winnersBg.Play();
-        
+
+        yield return new WaitForSeconds(8f);
+        Winners.SetActive(false);
     }
 
     public void DisplayNextSentence()

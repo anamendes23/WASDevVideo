@@ -39,6 +39,8 @@ public class ElementManager : MonoBehaviour
     [SerializeField]
     private GameObject after2;
     [SerializeField]
+    private GameObject lastPanel;
+    [SerializeField]
     private GameObject fader;
     [SerializeField]
     private GameObject faderOut;
@@ -64,6 +66,10 @@ public class ElementManager : MonoBehaviour
     [SerializeField]
     private Animator gameCubeConsoleAnim;
     [SerializeField]
+    private Animator afterParty;
+    [SerializeField]
+    private Animator lastPanelAnim;
+    [SerializeField]
     private Animator fadeAnim;
     [SerializeField]
     private Animator fadeOutAnim;
@@ -86,7 +92,7 @@ public class ElementManager : MonoBehaviour
         yield return new WaitForSeconds(15f);
         marioKPlayers.SetActive(true);
         marioKPlayersAnim.Play("MarioKPlayers");
-        Mario321.SetActive(false);
+        //Mario321.SetActive(false);
         yield return new WaitForSeconds(2.5f);
         wiiPlayers.SetActive(true);
         wiiPlayersAnim.Play("WiiPlayers");
@@ -117,7 +123,7 @@ public class ElementManager : MonoBehaviour
         groupPicTournament.SetActive(true);
         groupPicTournamentAnim.Play("Group");
         cybersecurityClub.SetActive(false);
-        yield return new WaitForSeconds(10f);
+        yield return new WaitForSeconds(12f);
         //deactivate everything
         SNConsole.SetActive(false);
         gameCubeConsole.SetActive(false);
@@ -125,14 +131,79 @@ public class ElementManager : MonoBehaviour
         //fades
         fader.SetActive(true);
         fadeAnim.Play("FadeIn");
-        yield return new WaitForSeconds(10f);
+        yield return new WaitForSeconds(5f);
         faderOut.SetActive(true);
         fadeOutAnim.Play("FadeOut");
         fader.SetActive(false);
         yield return new WaitForSeconds(2f);
+        faderOut.SetActive(false);
         win1.SetActive(true);
         win2.SetActive(true);
         win3.SetActive(true);
         win4.SetActive(true);
+
+        yield return new WaitForSeconds(5f);
+        //fades
+        fader.SetActive(true);
+        fadeAnim.Play("FadeIn");
+        yield return new WaitForSeconds(4f);
+        win1.SetActive(false);
+        win2.SetActive(false);
+        win3.SetActive(false);
+        win4.SetActive(false);
+        faderOut.SetActive(true);
+        fadeOutAnim.Play("FadeOut");
+        fader.SetActive(false);
+        yield return new WaitForSeconds(5f);
+        after1.SetActive(true);
+        afterParty.Play("AfterParty");
+        yield return new WaitForSeconds(5f);
+        after2.SetActive(true);
+        after1.SetActive(false);
+        yield return new WaitForSeconds(0.2f);        
+        after1.SetActive(false);
+        after2.SetActive(true);
+        yield return new WaitForSeconds(.2f);
+        after2.SetActive(true);
+        after1.SetActive(false);
+        yield return new WaitForSeconds(.2f);
+        after1.SetActive(false);
+        after2.SetActive(true);
+        fader.SetActive(true);
+        fadeAnim.Play("FadeIn");
+        yield return new WaitForSeconds(.2f);
+        after2.SetActive(true);
+        after1.SetActive(false);
+        yield return new WaitForSeconds(.2f);
+        after1.SetActive(false);
+        after2.SetActive(true);
+        yield return new WaitForSeconds(.2f);
+        after2.SetActive(true);
+        after1.SetActive(false);
+        yield return new WaitForSeconds(.2f);
+        after1.SetActive(false);
+        after2.SetActive(true);
+        yield return new WaitForSeconds(.2f);
+        after2.SetActive(true);
+        after1.SetActive(false);
+        yield return new WaitForSeconds(.2f);
+        after1.SetActive(false);
+        after2.SetActive(true);
+        yield return new WaitForSeconds(.2f);
+        after2.SetActive(true);
+        after1.SetActive(false);
+        yield return new WaitForSeconds(.2f);
+        after1.SetActive(false);
+        after2.SetActive(true);
+        yield return new WaitForSeconds(4f);
+        faderOut.SetActive(true);
+        fadeOutAnim.Play("FadeOut");
+        fader.SetActive(false);
+        after2.SetActive(false);
+        yield return new WaitForSeconds(5f);
+        lastPanel.SetActive(true);
+        lastPanelAnim.Play("LastPanel");
+        yield return new WaitForSeconds(10f);
+        Application.Quit();
     }
 }

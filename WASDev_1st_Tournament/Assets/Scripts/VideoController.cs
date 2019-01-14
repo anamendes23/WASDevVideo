@@ -16,6 +16,7 @@ public class VideoController : MonoBehaviour
     IEnumerator ChangeScene()
     {
         yield return new WaitForSeconds(8f);
+        //yield return StartCoroutine(Coroutine.WaitForRealSeconds(8f));
 
         SceneFader.instance.LoadScene("Content");
 
