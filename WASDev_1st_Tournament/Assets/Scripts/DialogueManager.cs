@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Video;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -11,11 +12,16 @@ public class DialogueManager : MonoBehaviour
 
     [SerializeField]
     private Animator anim;
-
+    //Audios
     [SerializeField]
     private AudioSource keyboard;
     [SerializeField]
     private AudioSource bgMusic;
+    [SerializeField]
+    private AudioSource bgMusicMario;
+    //Videos
+    [SerializeField]
+    private VideoPlayer marioVP321;
 
     private Queue<string> sentences;
 
@@ -76,7 +82,11 @@ public class DialogueManager : MonoBehaviour
         anim.SetBool("IsOpen", false);
         bgMusic.volume = 1.0f;
         //DisplayNextSentence();
-        //yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(3f);
+        bgMusicMario.Play();
+
+        yield return new WaitForSeconds(12f);
+        marioVP321.Play();
     }
 
     public void DisplayNextSentence()
