@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class ElementManager : MonoBehaviour
@@ -123,7 +124,7 @@ public class ElementManager : MonoBehaviour
         groupPicTournament.SetActive(true);
         groupPicTournamentAnim.Play("Group");
         cybersecurityClub.SetActive(false);
-        yield return new WaitForSeconds(12f);
+        yield return new WaitForSeconds(11f);
         //deactivate everything
         SNConsole.SetActive(false);
         gameCubeConsole.SetActive(false);
@@ -203,7 +204,10 @@ public class ElementManager : MonoBehaviour
         yield return new WaitForSeconds(5f);
         lastPanel.SetActive(true);
         lastPanelAnim.Play("LastPanel");
-        yield return new WaitForSeconds(10f);
-        Application.Quit();
+        yield return new WaitForSeconds(8f);
+        fader.SetActive(true);
+        fadeAnim.Play("FadeIn");
+        yield return new WaitForSeconds(5f);
+        SceneManager.LoadScene("Final");
     }
 }

@@ -20,7 +20,7 @@ public class VideoController : MonoBehaviour
 
         SceneFader.instance.LoadScene("Content");
 
-    }
+    }    
 
     void MakeSingleton()
     {

@@ -112,12 +112,12 @@ public class DialogueManager : MonoBehaviour
         VR.SetActive(false);
         BG.SetActive(true);
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(0.5f);
         Winners.SetActive(true);
         BG.SetActive(false);
         winnersBg.Play();
 
-        yield return new WaitForSeconds(8f);
+        yield return new WaitForSeconds(11f);
         Winners.SetActive(false);
     }
 
