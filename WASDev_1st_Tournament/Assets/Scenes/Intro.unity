@@ -642,7 +642,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 49eb2dfc58751bf4e9a44ccb2229299f, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.524
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1158,7 +1158,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 30.6, y: 16.7}
+  m_AnchoredPosition: {x: 30.600006, y: 16.699997}
   m_SizeDelta: {x: 885.2, y: 457}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1570142275
@@ -1288,7 +1288,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 1st Gaming Tournamet
+  m_Text: 1st Gaming Tournament
 --- !u!222 &2112129773
 CanvasRenderer:
   m_ObjectHideFlags: 0
